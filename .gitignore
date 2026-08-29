@@ -1,0 +1,20 @@
+node_modules/
+test-results/
+playwright-report/
+blob-report/
+.env
+*.env
+!.env.example
+
+# Python (rag-defect-agent, ci scripts)
+rag-defect-agent/.venv/
+rag-defect-agent/__pycache__/
+rag-defect-agent/.chroma/
+rag-defect-agent/defects_filed.json
+**/__pycache__/
+*.pyc
+
+# misc
+.DS_Store
+npm-debug.log*
+dist/

@@ -1,0 +1,14 @@
+node_modules
+test-results
+playwright-report
+blob-report
+.env
+*.env
+!.env.example
+.git
+rag-defect-agent/.venv
+rag-defect-agent/.chroma
+**/__pycache__
+*.pyc
+Jenkinsfile
+README.md

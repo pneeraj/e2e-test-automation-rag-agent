@@ -1,0 +1,23 @@
+{
+  "name": "e2e-playwright-showcase",
+  "version": "1.0.0",
+  "description": "End-to-end automation framework - UI, API and mobile-web on Playwright, with a LangChain/MCP defect-triage agent and Jenkins pipeline.",
+  "license": "MIT",
+  "scripts": {
+    "test": "playwright test",
+    "test:ui": "playwright test --project=ui-chrome",
+    "test:api": "playwright test --project=api",
+    "test:mobile": "playwright test --project=mobile-chrome --project=mobile-safari",
+    "test:headed": "playwright test --project=ui-chrome --headed --workers=1",
+    "test:smoke": "playwright test --grep @smoke",
+    "report": "playwright show-report",
+    "codegen:ui": "playwright codegen https://www.saucedemo.com",
+    "mcp:playwright": "npx @playwright/mcp@latest"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.47.2",
+    "@types/node": "^20.14.15",
+    "dotenv": "^16.4.5",
+    "typescript": "^5.5.4"
+  }
+}
