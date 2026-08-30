@@ -70,6 +70,19 @@ run the UI/API/mobile suites, always publish the Playwright HTML report, and - o
 `test-results/failures.json` was produced - run the RAG defect-triage agent as a final
 stage. A nightly cron trigger complements the normal push-triggered build.
 
+The job itself is provisioned as code - no UI clicking:
+
+```bash
+set JENKINS_USER=you
+set JENKINS_TOKEN=your-api-token
+py ci/create_jenkins_job.py --trigger --suite api
+```
+
+[create_jenkins_job.py](ci/create_jenkins_job.py) creates (or updates - it's idempotent) a
+parameterized pipeline job via the Jenkins REST API. Build parameters: `SUITE`
+(all/ui/api/mobile), `SAUCE_BASE_URL`, `BOOKING_API_BASE_URL`, `RUN_TRIAGE` - so the same
+job can run one suite against a different environment without any config change.
+
 A [Dockerfile](Dockerfile) is also included for teams running Linux agents: it packages the
 whole framework (browsers + Node + Python) into one image based on the official
 `mcr.microsoft.com/playwright` base, so the same suites can run containerized with
