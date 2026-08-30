@@ -83,6 +83,9 @@ parameterized pipeline job via the Jenkins REST API. Build parameters: `SUITE`
 (all/ui/api/mobile), `SAUCE_BASE_URL`, `BOOKING_API_BASE_URL`, `RUN_TRIAGE` - so the same
 job can run one suite against a different environment without any config change.
 
+Full setup guide - prerequisites, WAR startup flags, plugins, credentials, troubleshooting
+log of every issue actually hit: [ci/JENKINS.md](ci/JENKINS.md).
+
 A [Dockerfile](Dockerfile) is also included for teams running Linux agents: it packages the
 whole framework (browsers + Node + Python) into one image based on the official
 `mcr.microsoft.com/playwright` base, so the same suites can run containerized with
